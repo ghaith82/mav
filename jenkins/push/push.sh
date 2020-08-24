@@ -17,4 +17,5 @@ echo "****** Pushing image"
 
 echo "Image is: ghaith82/$IMAGE:$BUILD_TAG"
 
-docker push ghaith82/$IMAGE:$BUILD_TAG
+#docker push ghaith82/$IMAGE:$BUILD_TAG
+docker push ghaith82/maven-project:jenkins-mavvvv-7
