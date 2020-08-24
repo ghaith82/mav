@@ -15,4 +15,6 @@ docker tag $IMAGE:$BUILD_TAG ghaith82/$IMAGE:$BUILD_TAG
 
 echo "****** Pushing image"
 
+echo "Image is: ghaith82/$IMAGE:$BUILD_TAG"
+
 docker push ghaith82/$IMAGE:$BUILD_TAG
