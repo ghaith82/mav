@@ -2,10 +2,10 @@ pipeline {
 
     agent any
     
-/*    environment {
+    environment {
         PASS = credentials('registry-pass') 
     }
-*/
+
     stages {
 
         stage('Build') {
@@ -18,12 +18,12 @@ pipeline {
                 '''
             }
 
-/*            post {
+            post {
                 success {
                    archiveArtifacts artifacts: 'java-app/target/*.jar', fingerprint: true
                 }
             }
-*/
+
         }
 
         stage('Test') {
@@ -32,12 +32,12 @@ pipeline {
 		sh 'echo testing'
             }
 
-/*            post {
+            post {
                 always {
                     junit 'java-app/target/surefire-reports/*.xml'
                 }
             }
-*/
+
         }
 
         stage('Push') {
