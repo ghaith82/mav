@@ -2,10 +2,10 @@ pipeline {
 
     agent any
     
-#    environment {
-#        PASS = credentials('registry-pass') 
-#    }
-
+/*    environment {
+        PASS = credentials('registry-pass') 
+    }
+*/
     stages {
 
         stage('Build') {
@@ -18,11 +18,12 @@ pipeline {
                 '''
             }
 
-#            post {
-#                success {
-#                   archiveArtifacts artifacts: 'java-app/target/*.jar', fingerprint: true
-#                }
-#            }
+/*            post {
+                success {
+                   archiveArtifacts artifacts: 'java-app/target/*.jar', fingerprint: true
+                }
+            }
+*/
         }
 
         stage('Test') {
@@ -31,11 +32,12 @@ pipeline {
 		sh 'echo testing'
             }
 
-#            post {
-#                always {
-#                    junit 'java-app/target/surefire-reports/*.xml'
-#                }
-#            }
+/*            post {
+                always {
+                    junit 'java-app/target/surefire-reports/*.xml'
+                }
+            }
+*/
         }
 
         stage('Push') {
@@ -47,7 +49,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-#                sh './jenkins/deploy/deploy.sh'
+//                sh './jenkins/deploy/deploy.sh'
                 sh './jenkins/deploy/publish.sh'
 		sh 'echo Deploying'
             }
